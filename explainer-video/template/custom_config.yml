@@ -1,0 +1,26 @@
+directories:
+  base: ""
+  subdirs:
+    output: "renders"
+    raster_images: "assets/raster"
+    vector_images: "assets/vector"
+    sounds: "audio"
+    data: "assets/data"
+universal_import_line: "from manimlib import *"
+camera:
+  # Final renders: pass --uhd (3840x2160). Drafts: -l
+  resolution: (1920, 1080)
+  background_color: "#000000"
+  fps: 30
+file_writer:
+  saturation: 1.5
+  # Near-lossless scene renders; tools/assemble.sh does the single delivery encode
+  crf: 8
+text:
+  # Grant uses "CMU Serif"; swap in once it's installed and registered with fontconfig
+  font: "Noto Serif"
+  alignment: "CENTER"
+tex:
+  template: "basic"  # "default" needs texlive-fontsextra (dsfont, calligra, ...)
+embed:
+  autoreload: True

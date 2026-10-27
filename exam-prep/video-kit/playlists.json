@@ -1,0 +1,27 @@
+{
+  "out_dir": "../prep",
+  "language": "eng",
+  "playlists": {
+    "day01a": {
+      "file": "day01/Day 1A - Topic - theory",
+      "title": "Course Exam Prep · Day 1A: Topic — Theory",
+      "description": "script/descriptions/day01a.md",
+      "scenes": [
+        ["s01_intro", "TitleCard", "Intro"],
+        ["s02_concept", "FirstConcept", "First concept"],
+        ["s09_recap", "Recap", "Recap & exam traps"]
+      ]
+    },
+    "day01b": {
+      "file": "day01/Day 1B - Topic - worked examples",
+      "title": "Course Exam Prep · Day 1B: Topic — Worked Examples",
+      "description": "script/descriptions/day01b.md",
+      "scenes": [
+        ["s21_practice", "PracticeIntro", "Intro"],
+        ["s21_practice", "ExampleTrueFalse", "Example 1: statement to check"],
+        ["s21_practice", "PauseAndSolve", "Pause and solve"],
+        ["s21_practice", "WrapUp", "Wrap-up"]
+      ]
+    }
+  }
+}

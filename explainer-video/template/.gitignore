@@ -1,0 +1,12 @@
+.venv/
+.venv-tts/
+ref/
+renders/
+videos/
+__pycache__/
+*.pyc
+audio/voices/
+audio/placeholder/
+audio/samples/
+audio/music.*
+latex_cache/

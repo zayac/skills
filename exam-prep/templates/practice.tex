@@ -1,0 +1,136 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\usepackage[inline]{enumitem}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{high}{RGB}{200,40,40}
+\definecolor{medium}{RGB}{220,120,0}
+\definecolor{low}{RGB}{120,120,120}
+\definecolor{keyblue}{RGB}{0,70,150}
+
+% Number of distinct past exam papers (see prep-videos/script/frequencies.md)
+\newcommand{\papers}{8}
+% \freq{count}{where}: how many of the \papers past papers contain this question type.
+% high: at least half of the papers, medium: at least a quarter, low: fewer (same as video-kit/kit.py)
+\newcommand{\freqdots}[2]{%
+  \tikz[baseline=-0.6ex]{\foreach \i in {1,...,\papers}{%
+    \ifnum\i>#1 \fill[gray!35] (\i*0.19,0) circle (0.065);%
+    \else \fill[#2] (\i*0.19,0) circle (0.065);\fi}}}
+\newcommand{\freq}[2]{%
+  \ifnum\numexpr2*#1\relax<\papers\relax
+    \ifnum\numexpr4*#1\relax<\papers\relax \def\fc{low}\def\fl{low}\else\def\fc{medium}\def\fl{medium}\fi
+  \else\def\fc{high}\def\fl{high}\fi
+  \hfill{\small\color{\fc}\textbf{Exams: #1/\papers}~\freqdots{#1}{\fc}~(\fl)}\par
+  {\hfill\footnotesize\color{gray}#2}\par}
+\newcommand{\pts}[1]{\textbf{[#1~pt]}}
+\newcommand{\tf}{\quad $\square$ True \quad $\square$ False}
+
+\newcounter{q}
+\newenvironment{question}[2]{\refstepcounter{q}\par\medskip\noindent\textbf{Question \theq} \pts{#1} \emph{#2}}{\par}
+
+\tcbset{keybox/.style={colback=keyblue!4,colframe=keyblue,fonttitle=\bfseries,left=6pt,right=6pt,top=4pt,bottom=4pt}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Day 1 Practice Sheet: <Topic>}\\[4pt]
+{\large <Course> --- exam preparation}\\[2pt]
+{\small Companion to videos 1A (theory) and 1B (worked examples)}
+\end{center}
+
+\begin{tcolorbox}[keybox,title=How to use this sheet]
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item Solve all <n> questions in about \textbf{45 minutes}, without notes, as in the exam (<format: true/false, single choice, multiple answers marked with ``$\mid$''>).
+\item Then check the \textbf{answer key} (page~\pageref{key}), read the \textbf{solutions} for every question you missed, and fill in the \textbf{self-check} table.
+\item Each question carries an \textbf{exam-frequency tag}: how many of the \papers{} past exam papers (<list of papers>) contain this type of question.
+{\color{high}\textbf{high}} = at least half of the papers, {\color{medium}\textbf{medium}} = at least a quarter, {\color{low}\textbf{low}} = fewer. ``As a tool'' means the idea is needed inside a larger question.
+\item The questions are new variants written for this sheet; the original past-exam questions are indexed at the end.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[keybox,title=Key results (Day 1)]
+\small
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+\item \textbf{<Result>.} <formula>
+\end{itemize}
+\end{tcolorbox}
+
+\newpage
+\section*{Part A --- <subtopic> (<k> questions)}
+
+\begin{question}{2}{single choice}
+\freq{3}{Feb 2022 Q3, Aug 2022 Q3, Jan 2025 Q3}
+<Question text.>
+\par\smallskip\begin{enumerate*}[label=(\Alph*),itemjoin=\qquad]
+\item <a> \item <b> \item <c> \item <d>
+\end{enumerate*}
+\end{question}
+
+\begin{question}{1}{true/false}
+\freq{6}{as a tool in <larger question types>}
+<Statement.> \tf
+\end{question}
+
+\begin{question}{3}{multiple answers $\mid$}
+\freq{1}{Jan 2025 Q2}
+<Which of the following …? Mark all that apply.>
+\par\smallskip\begin{enumerate*}[label=(\Alph*),itemjoin=\qquad]
+\item <a> \item <b> \item <c> \item <d>
+\end{enumerate*}
+\end{question}
+
+\newpage
+\section*{Answer key}\label{key}
+\begin{center}\small\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{ccc}
+\toprule
+Q1 & Q2 & Q3\\
+B & True & A, C\\
+\bottomrule
+\end{tabular}
+\end{center}
+Total: <points> points. As in the exam, a multiple-answer question gives points only if exactly the right set is marked.
+
+\subsection*{Self-check}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Score & Meaning & What to do\\
+\midrule
+$\ge 90\%$ & exam-ready on Day 1 & move on to Day 2\\
+70--89\% & solid, with gaps & read the missed solutions; re-watch the linked parts\\
+below 70\% & not yet & re-watch video 1A, redo the sheet tomorrow before Day 2\\
+\bottomrule
+\end{tabular}
+\end{center}
+Score per part: Part A \underline{\hspace{1.2cm}}/<a> \qquad Part B \underline{\hspace{1.2cm}}/<b>.\\
+Frequent types you missed (tag medium/high) deserve priority over rare ones.
+
+\section*{Solutions}
+Lecture pointers refer to the recordings in \texttt{videos/} (L01 = \emph{01 lecture -- <topic>}, T1 = \emph{03 tutorial 1 -- <topic>}); timestamps match the transcripts in \texttt{transcripts/}.
+
+\begin{enumerate}[label=\textbf{Q\arabic*.},leftmargin=*,itemsep=6pt]
+\item \textbf{(B) <answer>.} <Derivation in one or two lines.> (A) is <the typical mistake behind this distractor>. \emph{Revisit:} L01 01:04:14, video 1A ``<chapter>''.
+\item \textbf{True.} <Reason.> \emph{Revisit:} video 1B ``Example 2''.
+\item \textbf{A and C.} (A) <why>. (B) <why not>. (C) <why>. (D) <why not>. \emph{Revisit:} T1 00:09:53.
+\end{enumerate}
+
+\section*{Index: original past-exam questions on Day 1 topics}
+\begin{center}\small
+\begin{tabular}{p{7.2cm}cp{6.2cm}}
+\toprule
+Question type & Papers & Where (\texttt{Exams/}, by date)\\
+\midrule
+<type> & 3/\papers & 2022-02-04 Q3, 2022-08-12 Q3, 2025-01-22 Q3\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{document}

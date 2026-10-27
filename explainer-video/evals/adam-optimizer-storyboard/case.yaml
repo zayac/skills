@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: adam-optimizer-storyboard
+expected_outcome: |
+  A new project is created from the bundled template at the requested path, setup succeeds, the
+  source paper is downloaded into paper/, and script/storyboard.md is filled in for an ~8-minute
+  Adam explainer with a one-sentence takeaway, a spine intuition, sections with beats, and every
+  visual classified as exact maths, real data, a source figure, or a labelled illustration. The
+  run then stops at the first checkpoint and asks the user for feedback, without writing the
+  narration or any scenes yet.

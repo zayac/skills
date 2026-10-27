@@ -1,0 +1,65 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=4.5mm,top=4mm,bottom=4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6pt}
+\setlength{\columnsep}{2.2mm}
+\setlength{\columnseprule}{0.2pt}
+\setlength{\abovedisplayskip}{1pt}
+\setlength{\belowdisplayskip}{1pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
+\setlist{nosep,leftmargin=2.2mm,labelsep=0.7mm,label=\textbullet}
+\setlength{\jot}{0pt}
+\thinmuskip=2mu \medmuskip=2.5mu \thickmuskip=3mu
+
+\definecolor{secc}{RGB}{0,70,150}
+\definecolor{subc}{RGB}{120,30,30}
+\definecolor{trap}{RGB}{190,0,0}
+\newcommand{\sect}[1]{\par\vspace{1.2pt}{\colorbox{secc}{\parbox{\dimexpr\linewidth-2\fboxsep}{\color{white}\bfseries #1}}}\par\vspace{0.3pt}}
+\newcommand{\sub}[1]{{\color{subc}\bfseries #1:}~}
+\newcommand{\T}{\textcolor{trap}{\textbf{!}}~}
+\newcommand{\N}{\mathcal N}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\renewcommand{\v}[1]{\bm{#1}}
+% Course-specific macros go here
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\tr}{tr}
+
+\begin{document}
+\fontsize{8.5}{9.35}\selectfont\RaggedRight
+\begin{multicols*}{4}
+
+% Layout: one \sect per topic in lecture order, then "Exam recipes".
+% \sub{Name} starts an entry; \T marks a trap (a common mistake or a favourite distractor).
+% Give high-frequency formulas in full, rare topics in one line.
+
+% ===================================================================
+\sect{1 <First topic>}
+\sub{<Concept>} $<formula>$, <condition>. \T <the classic mistake>.
+\sub{<Concept>} $<formula>$; special case $<formula>$.
+
+% ===================================================================
+\sect{2 <Second topic>}
+\sub{<Concept>} $<formula>$.
+
+% ===================================================================
+\sect{N Exam Recipes}
+\sub{<High-frequency question type>} 1) <step>; 2) <step>; 3) <check>. E.g.\ <tiny numeric example with the result>.
+\sub{<Matching / which-is-correct type>} <how to recognise each option>.
+
+\end{multicols*}
+\end{document}
