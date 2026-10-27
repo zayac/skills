@@ -111,6 +111,10 @@ Give the user absolute paths to `renders/final.mp4` and `renders/full_video.srt`
 captions via YouTube Studio → Subtitles → Upload file → "With timing"; credit the source in the
 description; answer the "altered or synthetic content" question for computer-generated narration.
 
+Then offer a slides version: a Google Slides or PowerPoint deck with the same visuals as native
+shapes, one click per narration cue and the narration in the speaker notes. If the user wants it,
+use the `explainer-slides` skill on this project.
+
 ## Improving the template
 
 When a project produces something reusable (a new building block in `style.py`, a tool fix, a
